@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid 19 Tracker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<style>
+     button{
+         background-color: grey;
+        position: relative;
+        right:45%;
+        margin-top: 2%;
+    }
+    button:hover{
+        color: greenyellow;
+        font-style: bold;
+    }
+    #temp{
+        color:grey;
+    }
+    #ans{
+        background: black;
+    }
+</style>
+<body>
+    <div id="ans" class="container-fluid text-center my-3 ">
+        <button id="btn">Help</button>
+        <h1 id="temp">Covid 19 India Tracker</h1>
+        <h5 class="text-muted">
+            Open Source project
+        </h5>
+    </div>
+    <div class="container my-5">
+        <div class="row text-center">
+            <div class="col-3 text-warning">
+                <h5>confirmed</h5>
+                <p id="confirmed"></p>
+            </div>
+            <div class="col-3 text-info">
+                <h5>Active</h5>
+                <p id="active"></p>
+            </div>
+            <div class="col-3 text-success">
+                <h5>recovered</h5>
+                <p id="recovered"></p>
+            </div>
+            <div class="col-3 text-danger">
+                <h5>Deceased</h5>
+                <p id="deaths"></p>
+            </div>
+        </div>
+        <canvas id="myChart"></canvas>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js"></script>
+<script src="script.js"></script>
+    <script>
+            window.watsonAssistantChatOptions = {
+                integrationID: "44d38005-0301-4e1e-82d6-9bdc057161e4", // The ID of this integration.
+                region: "eu-gb", // The region your integration is hosted in.
+                serviceInstanceID: "fbcfee2f-279b-4236-83bb-8d0f0309b2c5", // The ID of your service instance.
+                onLoad: function(instance) { instance.render(); }
+              };
+            setTimeout(function(){
+              const t=document.createElement('script');
+              t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+              document.head.appendChild(t);
+            });
+      </script>
+</html>
